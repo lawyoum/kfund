@@ -12,6 +12,7 @@
 #import "sandbox.h"
 #import "ipc.h"
 #import "KernelRwWrapper.h"
+#import "jailbreakd.h"
 
 uint64_t IOConnectTrap6(io_connect_t, uint32_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
 
@@ -78,6 +79,8 @@ uint64_t do_kopen(uint64_t puaf_pages, uint64_t puaf_method, uint64_t kread_meth
 //    NSLog(@"dirs: %@", [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/jb" error:nil]);
 //
 //
+//    printf("jbdSystemWideIsReachable: %d\n", jbdSystemWideIsReachable());
+//    NSLog(@"env: %@", NSProcessInfo.processInfo.environment);
 //    usleep(1000000);
 //    exit(0);
     _kfd = kopen(puaf_pages, puaf_method, kread_method, kwrite_method);
