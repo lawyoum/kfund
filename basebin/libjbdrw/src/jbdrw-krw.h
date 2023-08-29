@@ -1,6 +1,6 @@
 int jbdrw_kread(uint64_t from, void *to, size_t len);
 
-int jbdrw_kwrite(uint64_t from, void *to, size_t len);
+int jbdrw_kwrite(void *from, uint64_t to, size_t len);
 
 
 int jbdrw_kalloc(uint64_t *addr, size_t size);

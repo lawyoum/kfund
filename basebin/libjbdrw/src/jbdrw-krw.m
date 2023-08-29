@@ -50,8 +50,8 @@ int jbdrw_kread(uint64_t from, void *to, size_t len) {
   return 0;
 }
 
-int jbdrw_kwrite(uint64_t from, void *to, size_t len) {
-  kwritebuf(from, to, len);
+int jbdrw_kwrite(void *from, uint64_t to, size_t len) {
+  kwritebuf(to, from, len);
   return 0;
 }
 

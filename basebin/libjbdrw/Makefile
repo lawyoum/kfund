@@ -2,7 +2,7 @@ build_release: | clean pack_release
 build_debug: | clean pack_debug
 .PHONY: build_release
 
-VERSION=100.0
+VERSION=101.0
 RELEASE_CFLAGS = -DNDEBUG -Os -std=gnu11 -flto=thin
 DEBUG_CFLAGS = -DNDEBUG -g -O0 -std=gnu11
 CC = xcrun clang -arch arm64 -target arm64-apple-darwin -miphoneos-version-min=11.0 -miphoneos-version-min=12.0 -isysroot $(shell xcrun --sdk iphoneos --show-sdk-path) -Wl,-export_dynamic -shared -Iinclude -Isrc -Llib -framework Foundation -framework IOKit
