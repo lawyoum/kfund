@@ -17,6 +17,7 @@
 		6E6375F12B434F0B001EBFCA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6375F02B434F0B001EBFCA /* IOKit.framework */; };
 		6E6376B62B436590001EBFCA /* libkfd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376B52B43658F001EBFCA /* libkfd.m */; };
 		6E6376BC2B4368B1001EBFCA /* jailbreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376BB2B4368B1001EBFCA /* jailbreak.m */; };
+		6E6376BE2B43E54C001EBFCA /* krw.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376BD2B43E54C001EBFCA /* krw.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		6E6376B52B43658F001EBFCA /* libkfd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libkfd.m; sourceTree = "<group>"; };
 		6E6376BA2B4368B1001EBFCA /* jailbreak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jailbreak.h; sourceTree = "<group>"; };
 		6E6376BB2B4368B1001EBFCA /* jailbreak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jailbreak.m; sourceTree = "<group>"; };
+		6E6376BD2B43E54C001EBFCA /* krw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = krw.m; sourceTree = "<group>"; };
+		6E6376BF2B43E57B001EBFCA /* krw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = krw.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 			children = (
 				6E6376BA2B4368B1001EBFCA /* jailbreak.h */,
 				6E6376BB2B4368B1001EBFCA /* jailbreak.m */,
+				6E6376BD2B43E54C001EBFCA /* krw.m */,
+				6E6376BF2B43E57B001EBFCA /* krw.h */,
 			);
 			path = "post-exploit";
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				6E6376BC2B4368B1001EBFCA /* jailbreak.m in Sources */,
 				6E6375BA2B433D1E001EBFCA /* main.m in Sources */,
 				6E6375AC2B433D1C001EBFCA /* SceneDelegate.m in Sources */,
+				6E6376BE2B43E54C001EBFCA /* krw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
