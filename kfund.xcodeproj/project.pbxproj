@@ -24,6 +24,9 @@
 		6E6376CA2B440336001EBFCA /* proc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376C92B440336001EBFCA /* proc.m */; };
 		6ECABDB12B4561800014E5AF /* escalate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDB02B4561800014E5AF /* escalate.m */; };
 		6ECABDB42B457E4D0014E5AF /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDB32B457E4D0014E5AF /* utils.m */; };
+		6EF79B6E2B45A0F1005FE097 /* trustcache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B6D2B45A0F1005FE097 /* trustcache.m */; };
+		6EF79B772B45A477005FE097 /* dropbear.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B762B45A477005FE097 /* dropbear.m */; };
+		6EF79B7A2B45A55A005FE097 /* binaries in Resources */ = {isa = PBXBuildFile; fileRef = 6EF79B792B45A55A005FE097 /* binaries */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +100,11 @@
 		6ECABDB22B45618D0014E5AF /* escalate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = escalate.h; sourceTree = "<group>"; };
 		6ECABDB32B457E4D0014E5AF /* utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
 		6ECABDB62B457E7A0014E5AF /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		6EF79B6D2B45A0F1005FE097 /* trustcache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = trustcache.m; sourceTree = "<group>"; };
+		6EF79B6F2B45A107005FE097 /* trustcache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = trustcache.h; sourceTree = "<group>"; };
+		6EF79B762B45A477005FE097 /* dropbear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dropbear.m; sourceTree = "<group>"; };
+		6EF79B782B45A482005FE097 /* dropbear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dropbear.h; sourceTree = "<group>"; };
+		6EF79B792B45A55A005FE097 /* binaries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = binaries; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +139,7 @@
 		6E6375A62B433D1C001EBFCA /* kfund */ = {
 			isa = PBXGroup;
 			children = (
+				6EF79B792B45A55A005FE097 /* binaries */,
 				6E6375A72B433D1C001EBFCA /* AppDelegate.h */,
 				6E6375A82B433D1C001EBFCA /* AppDelegate.m */,
 				6E6375AA2B433D1C001EBFCA /* SceneDelegate.h */,
@@ -268,9 +277,12 @@
 				6E6376C52B43FD3F001EBFCA /* kcall.h */,
 				6E6376C32B43F9E3001EBFCA /* kcall.m */,
 				6ECABDB02B4561800014E5AF /* escalate.m */,
+				6EF79B6D2B45A0F1005FE097 /* trustcache.m */,
+				6EF79B6F2B45A107005FE097 /* trustcache.h */,
 				6ECABDB22B45618D0014E5AF /* escalate.h */,
 				6E6376C62B4400F5001EBFCA /* ipc.m */,
 				6E6376C82B440100001EBFCA /* ipc.h */,
+				6EF79B6C2B45A057005FE097 /* test */,
 				6ECABDAF2B449ADD0014E5AF /* pte.h */,
 				6ECABDB32B457E4D0014E5AF /* utils.m */,
 				6ECABDB62B457E7A0014E5AF /* utils.h */,
@@ -281,6 +293,15 @@
 				6E6376C12B43ECFC001EBFCA /* offsets.m */,
 			);
 			path = "post-exploit";
+			sourceTree = "<group>";
+		};
+		6EF79B6C2B45A057005FE097 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				6EF79B762B45A477005FE097 /* dropbear.m */,
+				6EF79B782B45A482005FE097 /* dropbear.h */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6375B72B433D1E001EBFCA /* LaunchScreen.storyboard in Resources */,
+				6EF79B7A2B45A55A005FE097 /* binaries in Resources */,
 				6E6375B42B433D1E001EBFCA /* Assets.xcassets in Resources */,
 				6E6375B22B433D1C001EBFCA /* Main.storyboard in Resources */,
 			);
@@ -353,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF79B772B45A477005FE097 /* dropbear.m in Sources */,
 				6E6376CA2B440336001EBFCA /* proc.m in Sources */,
 				6E6376C42B43F9E3001EBFCA /* kcall.m in Sources */,
 				6E6375AF2B433D1C001EBFCA /* ViewController.m in Sources */,
@@ -360,6 +383,7 @@
 				6E6376B62B436590001EBFCA /* libkfd.m in Sources */,
 				6E6376C72B4400F5001EBFCA /* ipc.m in Sources */,
 				6E6376BC2B4368B1001EBFCA /* jailbreak.m in Sources */,
+				6EF79B6E2B45A0F1005FE097 /* trustcache.m in Sources */,
 				6ECABDB12B4561800014E5AF /* escalate.m in Sources */,
 				6E6375BA2B433D1E001EBFCA /* main.m in Sources */,
 				6E6375AC2B433D1C001EBFCA /* SceneDelegate.m in Sources */,
