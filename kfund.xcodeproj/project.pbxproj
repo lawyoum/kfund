@@ -23,6 +23,7 @@
 		6E6376C72B4400F5001EBFCA /* ipc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376C62B4400F5001EBFCA /* ipc.m */; };
 		6E6376CA2B440336001EBFCA /* proc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376C92B440336001EBFCA /* proc.m */; };
 		6ECABDB12B4561800014E5AF /* escalate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDB02B4561800014E5AF /* escalate.m */; };
+		6ECABDB42B457E4D0014E5AF /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDB32B457E4D0014E5AF /* utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		6ECABDAF2B449ADD0014E5AF /* pte.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pte.h; sourceTree = "<group>"; };
 		6ECABDB02B4561800014E5AF /* escalate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = escalate.m; sourceTree = "<group>"; };
 		6ECABDB22B45618D0014E5AF /* escalate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = escalate.h; sourceTree = "<group>"; };
+		6ECABDB32B457E4D0014E5AF /* utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		6ECABDB62B457E7A0014E5AF /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 				6E6376C62B4400F5001EBFCA /* ipc.m */,
 				6E6376C82B440100001EBFCA /* ipc.h */,
 				6ECABDAF2B449ADD0014E5AF /* pte.h */,
+				6ECABDB32B457E4D0014E5AF /* utils.m */,
+				6ECABDB62B457E7A0014E5AF /* utils.h */,
 				6E6376C92B440336001EBFCA /* proc.m */,
 				6E6376CB2B440340001EBFCA /* proc.h */,
 				6E6376BF2B43E57B001EBFCA /* krw.h */,
@@ -358,6 +363,7 @@
 				6ECABDB12B4561800014E5AF /* escalate.m in Sources */,
 				6E6375BA2B433D1E001EBFCA /* main.m in Sources */,
 				6E6375AC2B433D1C001EBFCA /* SceneDelegate.m in Sources */,
+				6ECABDB42B457E4D0014E5AF /* utils.m in Sources */,
 				6E6376C22B43ECFC001EBFCA /* offsets.m in Sources */,
 				6E6376BE2B43E54C001EBFCA /* krw.m in Sources */,
 			);
