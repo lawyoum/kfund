@@ -22,8 +22,7 @@
 		6E6376C42B43F9E3001EBFCA /* kcall.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376C32B43F9E3001EBFCA /* kcall.m */; };
 		6E6376C72B4400F5001EBFCA /* ipc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376C62B4400F5001EBFCA /* ipc.m */; };
 		6E6376CA2B440336001EBFCA /* proc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6376C92B440336001EBFCA /* proc.m */; };
-		6ECABDAA2B4471AB0014E5AF /* pmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDA92B4471AB0014E5AF /* pmap.m */; };
-		6ECABDAD2B4497870014E5AF /* pplrw.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDAC2B4497870014E5AF /* pplrw.m */; };
+		6ECABDB12B4561800014E5AF /* escalate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECABDB02B4561800014E5AF /* escalate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,11 +91,9 @@
 		6E6376C82B440100001EBFCA /* ipc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ipc.h; sourceTree = "<group>"; };
 		6E6376C92B440336001EBFCA /* proc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = proc.m; sourceTree = "<group>"; };
 		6E6376CB2B440340001EBFCA /* proc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = proc.h; sourceTree = "<group>"; };
-		6ECABDA92B4471AB0014E5AF /* pmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pmap.m; sourceTree = "<group>"; };
-		6ECABDAB2B4471B70014E5AF /* pmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pmap.h; sourceTree = "<group>"; };
-		6ECABDAC2B4497870014E5AF /* pplrw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pplrw.m; sourceTree = "<group>"; };
-		6ECABDAE2B4497960014E5AF /* pplrw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pplrw.h; sourceTree = "<group>"; };
 		6ECABDAF2B449ADD0014E5AF /* pte.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pte.h; sourceTree = "<group>"; };
+		6ECABDB02B4561800014E5AF /* escalate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = escalate.m; sourceTree = "<group>"; };
+		6ECABDB22B45618D0014E5AF /* escalate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = escalate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,14 +264,12 @@
 				6E6376BD2B43E54C001EBFCA /* krw.m */,
 				6E6376C52B43FD3F001EBFCA /* kcall.h */,
 				6E6376C32B43F9E3001EBFCA /* kcall.m */,
+				6ECABDB02B4561800014E5AF /* escalate.m */,
+				6ECABDB22B45618D0014E5AF /* escalate.h */,
 				6E6376C62B4400F5001EBFCA /* ipc.m */,
 				6E6376C82B440100001EBFCA /* ipc.h */,
 				6ECABDAF2B449ADD0014E5AF /* pte.h */,
 				6E6376C92B440336001EBFCA /* proc.m */,
-				6ECABDA92B4471AB0014E5AF /* pmap.m */,
-				6ECABDAC2B4497870014E5AF /* pplrw.m */,
-				6ECABDAE2B4497960014E5AF /* pplrw.h */,
-				6ECABDAB2B4471B70014E5AF /* pmap.h */,
 				6E6376CB2B440340001EBFCA /* proc.h */,
 				6E6376BF2B43E57B001EBFCA /* krw.h */,
 				6E6376C02B43ECEE001EBFCA /* offsets.h */,
@@ -356,12 +351,11 @@
 				6E6376CA2B440336001EBFCA /* proc.m in Sources */,
 				6E6376C42B43F9E3001EBFCA /* kcall.m in Sources */,
 				6E6375AF2B433D1C001EBFCA /* ViewController.m in Sources */,
-				6ECABDAA2B4471AB0014E5AF /* pmap.m in Sources */,
 				6E6375A92B433D1C001EBFCA /* AppDelegate.m in Sources */,
-				6ECABDAD2B4497870014E5AF /* pplrw.m in Sources */,
 				6E6376B62B436590001EBFCA /* libkfd.m in Sources */,
 				6E6376C72B4400F5001EBFCA /* ipc.m in Sources */,
 				6E6376BC2B4368B1001EBFCA /* jailbreak.m in Sources */,
+				6ECABDB12B4561800014E5AF /* escalate.m in Sources */,
 				6E6375BA2B433D1E001EBFCA /* main.m in Sources */,
 				6E6375AC2B433D1C001EBFCA /* SceneDelegate.m in Sources */,
 				6E6376C22B43ECFC001EBFCA /* offsets.m in Sources */,
