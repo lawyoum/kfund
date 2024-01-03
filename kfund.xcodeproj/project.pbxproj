@@ -27,6 +27,10 @@
 		6EF79B6E2B45A0F1005FE097 /* trustcache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B6D2B45A0F1005FE097 /* trustcache.m */; };
 		6EF79B772B45A477005FE097 /* dropbear.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B762B45A477005FE097 /* dropbear.m */; };
 		6EF79B7A2B45A55A005FE097 /* binaries in Resources */ = {isa = PBXBuildFile; fileRef = 6EF79B792B45A55A005FE097 /* binaries */; };
+		6EF79B842B460B81005FE097 /* KernelRwWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B7C2B460B80005FE097 /* KernelRwWrapper.cpp */; };
+		6EF79B852B460B81005FE097 /* libgeneral_exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B7E2B460B80005FE097 /* libgeneral_exception.cpp */; };
+		6EF79B862B460B81005FE097 /* KernelRW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B812B460B80005FE097 /* KernelRW.cpp */; };
+		6EF79B882B460CF8005FE097 /* handoffKRW.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B872B460CF8005FE097 /* handoffKRW.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +109,16 @@
 		6EF79B762B45A477005FE097 /* dropbear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dropbear.m; sourceTree = "<group>"; };
 		6EF79B782B45A482005FE097 /* dropbear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dropbear.h; sourceTree = "<group>"; };
 		6EF79B792B45A55A005FE097 /* binaries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = binaries; sourceTree = "<group>"; };
+		6EF79B7C2B460B80005FE097 /* KernelRwWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KernelRwWrapper.cpp; sourceTree = "<group>"; };
+		6EF79B7D2B460B80005FE097 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		6EF79B7E2B460B80005FE097 /* libgeneral_exception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libgeneral_exception.cpp; sourceTree = "<group>"; };
+		6EF79B7F2B460B80005FE097 /* iokit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iokit.h; sourceTree = "<group>"; };
+		6EF79B802B460B80005FE097 /* libgeneral_exception.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = libgeneral_exception.hpp; sourceTree = "<group>"; };
+		6EF79B812B460B80005FE097 /* KernelRW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KernelRW.cpp; sourceTree = "<group>"; };
+		6EF79B822B460B80005FE097 /* KernelRW.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KernelRW.hpp; sourceTree = "<group>"; };
+		6EF79B832B460B80005FE097 /* KernelRwWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KernelRwWrapper.h; sourceTree = "<group>"; };
+		6EF79B872B460CF8005FE097 /* handoffKRW.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = handoffKRW.m; sourceTree = "<group>"; };
+		6EF79B892B460D06005FE097 /* handoffKRW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = handoffKRW.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +296,7 @@
 				6ECABDB22B45618D0014E5AF /* escalate.h */,
 				6E6376C62B4400F5001EBFCA /* ipc.m */,
 				6E6376C82B440100001EBFCA /* ipc.h */,
+				6EF79B7B2B460B62005FE097 /* handoff */,
 				6EF79B6C2B45A057005FE097 /* test */,
 				6ECABDAF2B449ADD0014E5AF /* pte.h */,
 				6ECABDB32B457E4D0014E5AF /* utils.m */,
@@ -299,9 +314,26 @@
 			isa = PBXGroup;
 			children = (
 				6EF79B762B45A477005FE097 /* dropbear.m */,
+				6EF79B872B460CF8005FE097 /* handoffKRW.m */,
+				6EF79B892B460D06005FE097 /* handoffKRW.h */,
 				6EF79B782B45A482005FE097 /* dropbear.h */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		6EF79B7B2B460B62005FE097 /* handoff */ = {
+			isa = PBXGroup;
+			children = (
+				6EF79B7F2B460B80005FE097 /* iokit.h */,
+				6EF79B812B460B80005FE097 /* KernelRW.cpp */,
+				6EF79B822B460B80005FE097 /* KernelRW.hpp */,
+				6EF79B7C2B460B80005FE097 /* KernelRwWrapper.cpp */,
+				6EF79B832B460B80005FE097 /* KernelRwWrapper.h */,
+				6EF79B7E2B460B80005FE097 /* libgeneral_exception.cpp */,
+				6EF79B802B460B80005FE097 /* libgeneral_exception.hpp */,
+				6EF79B7D2B460B80005FE097 /* macros.h */,
+			);
+			path = handoff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF79B882B460CF8005FE097 /* handoffKRW.m in Sources */,
 				6EF79B772B45A477005FE097 /* dropbear.m in Sources */,
 				6E6376CA2B440336001EBFCA /* proc.m in Sources */,
 				6E6376C42B43F9E3001EBFCA /* kcall.m in Sources */,
@@ -382,14 +415,17 @@
 				6E6375A92B433D1C001EBFCA /* AppDelegate.m in Sources */,
 				6E6376B62B436590001EBFCA /* libkfd.m in Sources */,
 				6E6376C72B4400F5001EBFCA /* ipc.m in Sources */,
+				6EF79B862B460B81005FE097 /* KernelRW.cpp in Sources */,
 				6E6376BC2B4368B1001EBFCA /* jailbreak.m in Sources */,
 				6EF79B6E2B45A0F1005FE097 /* trustcache.m in Sources */,
 				6ECABDB12B4561800014E5AF /* escalate.m in Sources */,
+				6EF79B852B460B81005FE097 /* libgeneral_exception.cpp in Sources */,
 				6E6375BA2B433D1E001EBFCA /* main.m in Sources */,
 				6E6375AC2B433D1C001EBFCA /* SceneDelegate.m in Sources */,
 				6ECABDB42B457E4D0014E5AF /* utils.m in Sources */,
 				6E6376C22B43ECFC001EBFCA /* offsets.m in Sources */,
 				6E6376BE2B43E54C001EBFCA /* krw.m in Sources */,
+				6EF79B842B460B81005FE097 /* KernelRwWrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
