@@ -10,6 +10,7 @@
 #import "pplrw.h"
 
 bool gIsJailbreakd = false;
+uint32_t gUserClient = 0;
 
 kern_return_t bootstrap_look_up(mach_port_t port, const char *service, mach_port_t *server_port);
 

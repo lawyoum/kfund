@@ -22,6 +22,9 @@ typedef enum {
 	JBD_MSG_INTERCEPT_USERSPACE_PANIC = 26,
 
 	JBD_SET_FAKELIB_VISIBLE = 30,
+
+	JBD_MSG_GET_USER_CLIENT = 100,
+	JBD_MSG_SET_KERNEL_USER_CLIENT = 101,
 } JBD_MESSAGE_ID;
 
 typedef enum {
@@ -37,6 +40,7 @@ typedef struct {
 } KcallThreadState;
 
 extern bool gIsJailbreakd;
+extern uint32_t gUserClient;
 
 uint64_t jbdParseNumUInt64(NSNumber *num);
 uint64_t jbdParseNumInt64(NSNumber *num);

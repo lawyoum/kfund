@@ -18,6 +18,7 @@
 #import "fakelib.h"
 #import "update.h"
 #import "forkfix.h"
+#import "iokit.h"
 
 /*#undef JBLogDebug
 void JBLogDebug(const char *format, ...)
@@ -168,6 +169,26 @@ void dumpUserspacePanicLog(const char *message)
 		chown(panicPath, 0, 250);
 		chmod(panicPath, 0660);
 	}
+}
+
+uint32_t get_user_client(void) {
+    io_service_t service = IOServiceGetMatchingService(
+        kIOMasterPortDefault, IOServiceMatching("IOSurfaceRoot"));
+
+    if (service == IO_OBJECT_NULL) {
+        JBLogDebug("[-] Failed to get IOSurfaceRoot service");
+        return -1;
+    }
+
+    io_connect_t conn = MACH_PORT_NULL;
+    kern_return_t kr = IOServiceOpen(service, mach_task_self(), 0, &gUserClient);
+    if (kr != KERN_SUCCESS) {
+        JBLogDebug("[-] Failed to open IOSurfaceRoot service");
+        return -1;
+    }
+    IOObjectRelease(service);
+
+    return gUserClient;
 }
 
 void jailbreakd_received_message(mach_port_t machPort, bool systemwide)
@@ -445,6 +466,40 @@ void jailbreakd_received_message(mach_port_t machPort, bool systemwide)
 						}
 						xpc_dictionary_set_int64(reply, "result", result);
 						break;
+					}
+
+					//XXX CUSTOM REQUEST
+					case JBD_MSG_GET_USER_CLIENT: {
+						int64_t result = 0;
+						if (gPPLRWStatus == kPPLRWStatusNotInitialized) {
+							if(get_user_client() != 0) {
+                    			xpc_dictionary_set_uint64(reply, "user_client", (uint64_t)gUserClient);
+								result = 0;
+							} else {
+                    			result = -1;
+							}
+						}
+						else {
+							result = -1;
+						}
+						xpc_dictionary_set_int64(reply, "result", (uint64_t)result);
+						break;
+					}
+					
+					case JBD_MSG_SET_KERNEL_USER_CLIENT: {
+						if (gPPLRWStatus == kPPLRWStatusNotInitialized) {
+							uint64_t jbd_uc_vtable = xpc_dictionary_get_uint64(message, "jailbreakd_userclient_vtable");
+							uint64_t jbd_uc_addr = xpc_dictionary_get_uint64(message, "jailbreakd_userclient_addr");
+							uint64_t old_uc_vtable = xpc_dictionary_get_uint64(message, "old_userclient_vtable");
+							uint64_t old_uc_addr = xpc_dictionary_get_uint64(message, "old_userclient_addr");
+							bootInfo_setObject(@"jailbreakd_userclient_vtable", @(jbd_uc_vtable));
+							bootInfo_setObject(@"jailbreakd_userclient_addr", @(jbd_uc_addr));
+							bootInfo_setObject(@"old_userclient_vtable", @(old_uc_vtable));
+							bootInfo_setObject(@"old_userclient_addr", @(old_uc_addr));
+							gPPLRWStatus = kPPLRWStatusInitialized;
+							xpc_dictionary_set_int64(reply, "result", 0);
+							break;
+						}
 					}
 				}
 			}

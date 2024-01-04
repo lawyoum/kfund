@@ -29,6 +29,8 @@
 		6EF79B7A2B45A55A005FE097 /* bootstrap in Resources */ = {isa = PBXBuildFile; fileRef = 6EF79B792B45A55A005FE097 /* bootstrap */; };
 		6EF79B882B460CF8005FE097 /* handoffKRW.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B872B460CF8005FE097 /* handoffKRW.m */; };
 		6EF79B8B2B462A30005FE097 /* handoff.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B8A2B462A30005FE097 /* handoff.m */; };
+		6EF79B8E2B470095005FE097 /* jailbreakd_test.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B8D2B470095005FE097 /* jailbreakd_test.m */; };
+		6EF79B912B4702FE005FE097 /* bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF79B902B4702FE005FE097 /* bootstrap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,10 @@
 		6EF79B892B460D06005FE097 /* handoffKRW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = handoffKRW.h; sourceTree = "<group>"; };
 		6EF79B8A2B462A30005FE097 /* handoff.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = handoff.m; sourceTree = "<group>"; };
 		6EF79B8C2B462A3C005FE097 /* handoff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = handoff.h; sourceTree = "<group>"; };
+		6EF79B8D2B470095005FE097 /* jailbreakd_test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jailbreakd_test.m; sourceTree = "<group>"; };
+		6EF79B8F2B4700B5005FE097 /* jailbreakd_test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jailbreakd_test.h; sourceTree = "<group>"; };
+		6EF79B902B4702FE005FE097 /* bootstrap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bootstrap.m; sourceTree = "<group>"; };
+		6EF79B922B47030F005FE097 /* bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bootstrap.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +294,8 @@
 				6ECABDB22B45618D0014E5AF /* escalate.h */,
 				6E6376C62B4400F5001EBFCA /* ipc.m */,
 				6E6376C82B440100001EBFCA /* ipc.h */,
+				6EF79B902B4702FE005FE097 /* bootstrap.m */,
+				6EF79B922B47030F005FE097 /* bootstrap.h */,
 				6EF79B7B2B460B62005FE097 /* handoff */,
 				6EF79B6C2B45A057005FE097 /* test */,
 				6ECABDAF2B449ADD0014E5AF /* pte.h */,
@@ -309,6 +317,8 @@
 				6EF79B872B460CF8005FE097 /* handoffKRW.m */,
 				6EF79B892B460D06005FE097 /* handoffKRW.h */,
 				6EF79B782B45A482005FE097 /* dropbear.h */,
+				6EF79B8D2B470095005FE097 /* jailbreakd_test.m */,
+				6EF79B8F2B4700B5005FE097 /* jailbreakd_test.h */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -399,6 +409,7 @@
 				6E6376CA2B440336001EBFCA /* proc.m in Sources */,
 				6E6376C42B43F9E3001EBFCA /* kcall.m in Sources */,
 				6E6375AF2B433D1C001EBFCA /* ViewController.m in Sources */,
+				6EF79B912B4702FE005FE097 /* bootstrap.m in Sources */,
 				6E6375A92B433D1C001EBFCA /* AppDelegate.m in Sources */,
 				6E6376B62B436590001EBFCA /* libkfd.m in Sources */,
 				6E6376C72B4400F5001EBFCA /* ipc.m in Sources */,
@@ -407,6 +418,7 @@
 				6ECABDB12B4561800014E5AF /* escalate.m in Sources */,
 				6E6375BA2B433D1E001EBFCA /* main.m in Sources */,
 				6E6375AC2B433D1C001EBFCA /* SceneDelegate.m in Sources */,
+				6EF79B8E2B470095005FE097 /* jailbreakd_test.m in Sources */,
 				6ECABDB42B457E4D0014E5AF /* utils.m in Sources */,
 				6E6376C22B43ECFC001EBFCA /* offsets.m in Sources */,
 				6E6376BE2B43E54C001EBFCA /* krw.m in Sources */,
